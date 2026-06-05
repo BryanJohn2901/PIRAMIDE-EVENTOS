@@ -8,7 +8,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/reviews-carousel.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" crossorigin="anonymous">
     
@@ -20,8 +21,7 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
                     },
                     colors: {
                         brand: {
@@ -131,9 +131,9 @@
             <div class="max-w-2xl">
                 <img src="assets/logoTransparente.png" alt="Logo" class="h-20 md:h-28 object-contain brightness-0 invert opacity-90 mb-12" data-aos="fade-down">
                 
-                <h1 class="font-serif text-5xl md:text-7xl font-bold mb-6 leading-[1.1]" data-aos="fade-up">
+                <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-[1.1]" data-aos="fade-up">
                     Experiências <br>
-                    <span class="text-brand-accent italic font-normal">Inesquecíveis</span>
+                    <span class="text-brand-accent">Inesquecíveis</span>
                 </h1>
                 
                 <p class="text-gray-400 text-lg md:text-xl font-light mb-10 max-w-lg leading-relaxed" data-aos="fade-up" data-aos-delay="100">
@@ -141,7 +141,8 @@
                 </p>
                 
                 <div class="flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="200">
-                    <a href="https://api.whatsapp.com/send/?phone=5541988909600" class="btn-accent px-8 py-4 rounded-lg font-bold uppercase tracking-wide text-sm text-center shadow-lg">
+                    <a href="https://api.whatsapp.com/send/?phone=5541988909600" class="btn-accent inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg font-bold uppercase tracking-wide text-sm text-center shadow-lg">
+                        <i class="fab fa-whatsapp text-lg" aria-hidden="true"></i>
                         Fale com Especialista
                     </a>
                     <a href="#eventos" class="px-8 py-4 rounded-lg font-bold uppercase tracking-wide text-sm text-center border border-white/20 hover:bg-white/5 transition-colors">
@@ -198,14 +199,14 @@
                 
                 <div class="lg:col-span-5" data-aos="fade-right">
                     <div class="inline-block bg-brand-slate text-white text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-6">Nossa Essência</div>
-                    <h2 class="font-serif text-4xl md:text-5xl text-brand-deep mb-6 leading-tight">Uma História<br>de Família</h2>
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-brand-deep mb-6 leading-tight">Uma História<br>de Família</h2>
                     <p class="text-brand-slate text-base leading-relaxed mb-6">
                         Construído para celebrar um momento especial em família, o Espaço Pirâmide rapidamente se tornou referência. Há 7 anos, nossa equipe liderada por Vinicius transforma sonhos em realidade.
                     </p>
                     <p class="text-brand-slate text-base leading-relaxed mb-8">
                         Seja um casamento intimista, um 15 anos vibrante ou um evento corporativo impecável, oferecemos a infraestrutura completa para que você seja apenas um convidado na sua própria festa.
                     </p>
-                    <a href="https://api.whatsapp.com/send/?phone=5541988909600" class="font-bold text-brand-deep border-b-2 border-brand-accent pb-1 hover:text-brand-accent transition-colors uppercase tracking-wider text-sm">Saber mais sobre nós</a>
+                    <a href="https://api.whatsapp.com/send/?phone=5541988909600" class="inline-flex items-center gap-2 font-bold text-brand-deep border-b-2 border-brand-accent pb-1 hover:text-brand-accent transition-colors uppercase tracking-wider text-sm"><i class="fab fa-whatsapp" aria-hidden="true"></i> Saber mais sobre nós</a>
                 </div>
 
                 <div class="lg:col-span-7 relative" data-aos="fade-left">
@@ -227,7 +228,7 @@
             
             <div class="flex flex-col md:flex-row justify-between items-end mb-16" data-aos="fade-up">
                 <div class="max-w-2xl">
-                    <h2 class="font-serif text-5xl mb-4">Portfólio de Eventos</h2>
+                    <h2 class="text-5xl font-extrabold mb-4">Portfólio de Eventos</h2>
                     <p class="text-gray-400">Momentos reais eternizados no Espaço Pirâmide. Cada celebração tem sua própria assinatura.</p>
                 </div>
                 <div class="hidden text-outline text-7xl font-bold md:block opacity-50">EXCLUSIVO</div>
@@ -241,7 +242,7 @@
                         <img src="assets/banquet_table.png" alt="Casamentos" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-gradient-to-t from-[#0B0F19] via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
                         <div class="absolute bottom-0 left-0 p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform">
-                            <h3 class="font-serif text-2xl text-white mb-2">Casamentos</h3>
+                            <h3 class="text-2xl font-bold text-white mb-2">Casamentos</h3>
                             <p class="text-brand-accent text-sm opacity-0 group-hover:opacity-100 transition-opacity delay-100 uppercase tracking-widest">Ver detalhes →</p>
                         </div>
                     </div>
@@ -253,7 +254,7 @@
                         <img src="assets/guests_dancing.png" alt="Debutantes" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-gradient-to-t from-[#0B0F19] via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
                         <div class="absolute bottom-0 left-0 p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform">
-                            <h3 class="font-serif text-2xl text-white mb-2">Debutantes</h3>
+                            <h3 class="text-2xl font-bold text-white mb-2">Debutantes</h3>
                             <p class="text-brand-accent text-sm opacity-0 group-hover:opacity-100 transition-opacity delay-100 uppercase tracking-widest">Ver detalhes →</p>
                         </div>
                     </div>
@@ -265,7 +266,7 @@
                         <img src="assets/hero_wedding.png" alt="Corporativo" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-gradient-to-t from-[#0B0F19] via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
                         <div class="absolute bottom-0 left-0 p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform">
-                            <h3 class="font-serif text-2xl text-white mb-2">Corporativo</h3>
+                            <h3 class="text-2xl font-bold text-white mb-2">Corporativo</h3>
                             <p class="text-brand-accent text-sm opacity-0 group-hover:opacity-100 transition-opacity delay-100 uppercase tracking-widest">Ver detalhes →</p>
                         </div>
                     </div>
@@ -279,7 +280,7 @@
     <section id="pacotes" class="py-24 bg-white relative z-20">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="font-serif text-4xl md:text-5xl text-brand-deep mb-4">Serviços & Pacotes</h2>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-brand-deep mb-4">Serviços & Pacotes</h2>
                 <div class="w-16 h-1 bg-brand-accent mx-auto mb-4"></div>
                 <p class="text-brand-slate text-lg">Flexibilidade para atender a sua necessidade.</p>
             </div>
@@ -290,7 +291,7 @@
                     <span class="text-brand-accent text-3xl mb-4 block"><i class="fas fa-home"></i></span>
                     <h3 class="text-2xl font-bold text-brand-deep mb-4">Somente Salão</h3>
                     <p class="text-brand-slate mb-6 text-sm">Locação do espaço com flexibilidade de fornecedores. Ideal para eventos menores e customizados.</p>
-                    <a href="https://api.whatsapp.com/send/?phone=5541988909600" class="text-sm font-bold uppercase tracking-wider text-brand-deep hover:text-brand-accent transition-colors">Solicitar Orçamento →</a>
+                    <a href="https://api.whatsapp.com/send/?phone=5541988909600" class="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-brand-deep hover:text-brand-accent transition-colors"><i class="fab fa-whatsapp" aria-hidden="true"></i> Solicitar Orçamento →</a>
                 </div>
 
                 <div class="p-10 border-b border-r border-gray-100 bg-brand-deep text-white transform md:-translate-y-4 shadow-2xl relative" data-aos="fade-up" data-aos-delay="100">
@@ -298,22 +299,70 @@
                     <span class="text-brand-accent text-3xl mb-4 block"><i class="fas fa-gem"></i></span>
                     <h3 class="text-2xl font-bold text-white mb-4">Pacote Completo</h3>
                     <p class="text-gray-300 mb-6 text-sm">A solução definitiva: Salão, Buffet Premium, DJ, Staff e Assessoria. Você não se preocupa com nada.</p>
-                    <a href="https://api.whatsapp.com/send/?phone=5541988909600" class="btn-accent block text-center py-3 rounded-lg font-bold uppercase tracking-wider text-sm">Falar no WhatsApp</a>
+                    <a href="https://api.whatsapp.com/send/?phone=5541988909600" class="btn-accent flex items-center justify-center gap-2 py-3 rounded-lg font-bold uppercase tracking-wider text-sm"><i class="fab fa-whatsapp" aria-hidden="true"></i> Falar no WhatsApp</a>
                 </div>
 
                 <div class="p-10 border-b border-r border-gray-100 hover:bg-gray-50 transition-colors" data-aos="fade-up" data-aos-delay="200">
                     <span class="text-brand-accent text-3xl mb-4 block"><i class="fas fa-utensils"></i></span>
                     <h3 class="text-2xl font-bold text-brand-deep mb-4">Salão + Buffet</h3>
                     <p class="text-brand-slate mb-6 text-sm">Nossa estrutura somada à nossa alta gastronomia. Liberdade para trazer seu DJ e decoração.</p>
-                    <a href="https://api.whatsapp.com/send/?phone=5541988909600" class="text-sm font-bold uppercase tracking-wider text-brand-deep hover:text-brand-accent transition-colors">Solicitar Orçamento →</a>
+                    <a href="https://api.whatsapp.com/send/?phone=5541988909600" class="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-brand-deep hover:text-brand-accent transition-colors"><i class="fab fa-whatsapp" aria-hidden="true"></i> Solicitar Orçamento →</a>
                 </div>
 
             </div>
         </div>
     </section>
 
+    <!-- Depoimentos -->
+    <section id="depoimentos" class="py-24 bg-brand-light" aria-labelledby="depoimentos-titulo">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 id="depoimentos-titulo" class="text-4xl md:text-5xl font-extrabold text-brand-deep mb-4">O Que Dizem Sobre Nós</h2>
+                <p class="text-brand-slate text-sm">Com base nas avaliações do Google</p>
+            </div>
+
+            <div class="reviews-widget" data-reviews-carousel role="region" aria-roledescription="carrossel" aria-label="Avaliações do Google">
+                <div class="reviews-widget__header text-brand-slate">
+                    <div class="reviews-widget__google">
+                        <svg class="reviews-widget__google-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                        Avaliações no Google
+                    </div>
+                    <div class="reviews-widget__score">
+                        <span class="reviews-widget__stars" aria-hidden="true">★★★★★</span>
+                        <span>5,0 · 100+ avaliações</span>
+                    </div>
+                </div>
+                <div class="reviews-widget__viewport">
+                    <div class="reviews-widget__track"></div>
+                </div>
+                <div class="reviews-widget__footer">
+                    <button type="button" class="reviews-widget__btn reviews-widget__btn--prev bg-brand-accent text-brand-deep" aria-label="Avaliação anterior"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+                    <div class="reviews-widget__dots"></div>
+                    <button type="button" class="reviews-widget__btn reviews-widget__btn--next bg-brand-accent text-brand-deep" aria-label="Próxima avaliação"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+                </div>
+            </div>
+
+            <div class="text-center mt-10">
+                <a href="https://api.whatsapp.com/send/?phone=5541988909600&text=Ol%C3%A1%21+Vi+as+avalia%C3%A7%C3%B5es+e+gostaria+de+um+or%C3%A7amento." target="_blank" rel="noopener noreferrer" class="btn-accent inline-flex items-center gap-2 px-8 py-3 rounded-lg font-bold uppercase tracking-wider text-sm"><i class="fab fa-whatsapp text-lg" aria-hidden="true"></i> Quero Celebrar Aqui</a>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer (Dark) -->
-    <footer class="bg-brand-deep py-16 border-t border-white/5 text-white">
+    <footer id="contato" class="bg-brand-deep border-t border-white/5 text-white">
+        <div id="mapa" class="w-full" style="height:380px;">
+            <iframe
+                src="https://www.google.com/maps?q=Espa%C3%A7o+Pir%C3%A2mide+Eventos+Curitiba&output=embed&hl=pt-BR&z=13"
+                width="100%"
+                height="100%"
+                style="border:0; display:block;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Localização Espaço Pirâmide Eventos no Google Maps">
+            </iframe>
+        </div>
+        <div class="py-16">
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
             
             <div class="flex flex-col items-center md:items-start">
@@ -322,13 +371,13 @@
             </div>
 
             <div class="flex flex-col items-center md:items-start">
-                <h4 class="font-serif text-2xl mb-6">Informações</h4>
+                <h4 class="text-2xl font-bold mb-6">Informações</h4>
                 <p class="text-gray-400 text-sm mb-2"><i class="fas fa-location-dot text-brand-accent mr-2"></i> Rua Orestes Beltrami, 330 - Pilarzinho</p>
                 <p class="text-gray-400 text-sm mb-2"><i class="fab fa-whatsapp text-brand-accent mr-2"></i> (41) 98890-9600</p>
             </div>
 
             <div class="flex flex-col items-center md:items-start">
-                <h4 class="font-serif text-2xl mb-6">Siga-nos</h4>
+                <h4 class="text-2xl font-bold mb-6">Siga-nos</h4>
                 <div class="flex gap-4">
                     <a href="#" class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center hover:bg-brand-accent hover:text-brand-deep transition-colors text-xl"><i class="fab fa-instagram"></i></a>
                     <a href="#" class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center hover:bg-brand-accent hover:text-brand-deep transition-colors text-xl"><i class="fab fa-facebook-f"></i></a>
@@ -338,6 +387,7 @@
         </div>
         <div class="max-w-7xl mx-auto px-6 text-center text-gray-500 text-xs mt-16 pt-8 border-t border-white/5">
             &copy; 2026 Espaço Pirâmide Eventos. Layout Misto Premium.
+        </div>
         </div>
     </footer>
 
@@ -356,5 +406,7 @@
             });
         });
     </script>
+    <script src="assets/site-config.js"></script>
+    <script src="assets/reviews-carousel.js"></script>
 </body>
 </html>
