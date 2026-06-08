@@ -3,7 +3,7 @@ set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 DIST="$ROOT/dist"
-SRC_HTML="$ROOT/index-dark.html"
+SRC_HTML="$ROOT/index.html"
 
 echo "→ Build versão dark para Cloudflare Pages"
 
@@ -11,9 +11,7 @@ rm -rf "$DIST"
 mkdir -p "$DIST/assets/img"
 
 # Página principal
-sed \
-  -e 's/Espaço Pirâmide Eventos | Premium Dark/Espaço Pirâmide Eventos | Curitiba/' \
-  "$SRC_HTML" > "$DIST/index.html"
+cp "$SRC_HTML" "$DIST/index.html"
 
 # Assets estáticos
 cp "$ROOT/assets/reviews-carousel.css" "$DIST/assets/"
@@ -22,7 +20,6 @@ cp "$ROOT/assets/site-config.js" "$DIST/assets/"
 
 # Imagens WebP usadas na versão dark
 IMAGES=(
-  logo-sm.webp logo-lg.webp
   AR2A0823-xl.webp AR2A0823-lg.webp AR2A0823-md.webp
   BL7A8783-lg.webp BL7A8783-md.webp
   IMG_1747-lg.webp IMG_1747-md.webp
