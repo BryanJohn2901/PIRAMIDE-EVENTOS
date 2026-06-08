@@ -11,6 +11,7 @@
     justify-content: center;
     gap: 1rem 1.5rem;
     margin-bottom: 2rem;
+    color: #374151;
 }
 
 .reviews-widget__google {
@@ -19,6 +20,7 @@
     gap: 0.5rem;
     font-size: 0.875rem;
     font-weight: 600;
+    color: inherit;
 }
 
 .reviews-widget__google-icon {
@@ -32,6 +34,7 @@
     align-items: center;
     gap: 0.5rem;
     font-weight: 700;
+    color: inherit;
 }
 
 .reviews-widget__stars {
@@ -65,8 +68,9 @@
     .reviews-widget__slide { flex: 0 0 33.333%; padding: 0 0.625rem; }
 }
 
+/* Cards sempre com fundo claro e texto escuro — evita herança de text-white do tema */
 .reviews-widget__card {
-    background: #fff;
+    background: #ffffff;
     border-radius: 0.75rem;
     padding: 1.25rem 1.5rem;
     height: 100%;
@@ -74,14 +78,8 @@
     display: flex;
     flex-direction: column;
     box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.12);
-    border: 1px solid rgba(0, 0, 0, 0.06);
-}
-
-.reviews-widget--dark .reviews-widget__card {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.08);
-    color: #e5e5e5;
-    box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    color: #1f2937;
 }
 
 .reviews-widget__card-top {
@@ -96,7 +94,7 @@
     height: 2.5rem;
     border-radius: 9999px;
     background: #f3f4f6;
-    color: #6b7280;
+    color: #4b5563;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -105,20 +103,16 @@
     flex-shrink: 0;
 }
 
-.reviews-widget--dark .reviews-widget__avatar {
-    background: rgba(255, 255, 255, 0.1);
-    color: #d4d4d4;
-}
-
 .reviews-widget__meta-name {
     font-weight: 700;
     font-size: 0.875rem;
     line-height: 1.2;
+    color: #111827;
 }
 
 .reviews-widget__meta-date {
     font-size: 0.75rem;
-    opacity: 0.55;
+    color: #6b7280;
 }
 
 .reviews-widget__card-stars {
@@ -129,9 +123,10 @@
 
 .reviews-widget__card-text {
     font-size: 0.875rem;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.6;
     flex-grow: 1;
+    color: #374151;
 }
 
 .reviews-widget__footer {
@@ -181,13 +176,47 @@
     transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-.reviews-widget--dark .reviews-widget__dot {
-    background: #D4AF37;
-}
-
 .reviews-widget__dot.is-active {
     opacity: 1;
     transform: scale(1.2);
+}
+
+/* Contexto em páginas dark: cabeçalho claro, cards permanecem legíveis */
+.reviews-widget--dark .reviews-widget__header {
+    color: #d1d5db;
+}
+
+.reviews-widget--dark .reviews-widget__google,
+.reviews-widget--dark .reviews-widget__score {
+    color: #d1d5db;
+}
+
+.reviews-widget--dark .reviews-widget__card {
+    background: #ffffff;
+    border-color: rgba(0, 0, 0, 0.08);
+    box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.35);
+    color: #1f2937;
+}
+
+.reviews-widget--dark .reviews-widget__meta-name {
+    color: #111827;
+}
+
+.reviews-widget--dark .reviews-widget__meta-date {
+    color: #6b7280;
+}
+
+.reviews-widget--dark .reviews-widget__card-text {
+    color: #374151;
+}
+
+.reviews-widget--dark .reviews-widget__avatar {
+    background: #f3f4f6;
+    color: #4b5563;
+}
+
+.reviews-widget--dark .reviews-widget__dot {
+    background: #D4AF37;
 }
 
 @media (prefers-reduced-motion: reduce) {
