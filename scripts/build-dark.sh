@@ -3,44 +3,42 @@ set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 DIST="$ROOT/dist"
-SRC_HTML="$ROOT/index.html"
 
-echo "→ Build versão dark para Cloudflare Pages"
+echo "→ Build produção (dist/)"
 
 rm -rf "$DIST"
 mkdir -p "$DIST/assets/img"
 
-# Página principal
-cp "$SRC_HTML" "$DIST/index.html"
+# Páginas HTML
+for page in index.html index-light.html index-mixed.html index-dark.html index-dark-form.html; do
+  if [[ -f "$ROOT/$page" ]]; then
+    cp "$ROOT/$page" "$DIST/$page"
+  fi
+done
 
 # Assets estáticos
 cp "$ROOT/assets/reviews-carousel.css" "$DIST/assets/"
 cp "$ROOT/assets/reviews-carousel.js" "$DIST/assets/"
 cp "$ROOT/assets/site-config.js" "$DIST/assets/"
 
-# Imagens WebP usadas na versão dark
-IMAGES=(
-  AR2A0823-xl.webp AR2A0823-lg.webp AR2A0823-md.webp
-  BL7A8783-lg.webp BL7A8783-md.webp
-  IMG_1747-lg.webp IMG_1747-md.webp
-  BL7A8780-lg.webp BL7A8780-md.webp
-  IMG_9853-lg.webp
-  AR2A0826-lg.webp
-  IMG_9851-lg.webp
-  BL7A8787-lg.webp
-)
+# Imagens da página hub (logo e previews)
+shopt -s nullglob
+hub_imgs=("$ROOT/assets/logoTransparente.png" "$ROOT/assets/print-"*.png)
+if [[ ${#hub_imgs[@]} -gt 0 ]]; then
+  cp "${hub_imgs[@]}" "$DIST/assets/"
+fi
 
-for img in "${IMAGES[@]}"; do
-  src="$ROOT/assets/img/$img"
-  if [[ ! -f "$src" ]]; then
-    echo "ERRO: imagem ausente: $src" >&2
-    echo "Execute: python3 scripts/optimize-images.py" >&2
-    exit 1
-  fi
-  cp "$src" "$DIST/assets/img/"
-done
+# Imagens WebP (todas as variantes do site)
+shopt -s nullglob
+imgs=("$ROOT/assets/img/"*.webp)
+if [[ ${#imgs[@]} -eq 0 ]]; then
+  echo "ERRO: nenhuma imagem em assets/img/" >&2
+  echo "Execute: python3 scripts/optimize-images.py" >&2
+  exit 1
+fi
+cp "${imgs[@]}" "$DIST/assets/img/"
 
-# Cache e segurança (Cloudflare Pages)
+# Cache (Cloudflare Pages; na Vercel use vercel.json na raiz)
 cat > "$DIST/_headers" << 'EOF'
 /*
   X-Content-Type-Options: nosniff

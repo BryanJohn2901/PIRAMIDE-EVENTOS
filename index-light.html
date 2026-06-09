@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="pt-BR" id="site" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espaço Pirâmide Eventos | Salão para Festas em Curitiba</title>
+    <meta name="description" content="Salão de eventos no Pilarzinho, Curitiba. Casamentos, 15 anos, corporativo e aniversários para até 150 convidados. Pacote completo com buffet, DJ e assessoria.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/reviews-carousel.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            black: '#000000',
+                            yellow: '#FFEB00',
+                            yellowDark: '#E6D400',
+                            light: '#F5F5F5',
+                            dark: '#1A1A1A',
+                            gray: '#6B7280',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html#site {
+            scroll-behavior: smooth;
+            scroll-padding-top: 1rem;
+            overflow-x: clip;
+            overflow-y: scroll;
+            scrollbar-gutter: stable;
+            scrollbar-width: thin;
+            scrollbar-color: #FFEB00 #F5F5F5;
+        }
+        html#site::-webkit-scrollbar { width: 10px; }
+        html#site::-webkit-scrollbar-track { background: #F5F5F5; }
+        html#site::-webkit-scrollbar-thumb {
+            background: #FFEB00;
+            border-radius: 999px;
+            border: 2px solid #F5F5F5;
+        }
+        html#site::-webkit-scrollbar-thumb:hover { background: #E6D400; }
+
+        :root {
+            --motion-duration: 0.55s;
+            --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
+            --hero-end: 1.9s;
+        }
+        .duration-motion {
+            transition-duration: var(--motion-duration);
+            transition-timing-function: var(--motion-ease);
+        }
+        .transition, .transition-colors, .transition-transform {
+            transition-duration: var(--motion-duration);
+            transition-timing-function: var(--motion-ease);
+        }
+        body {
+            overflow-x: clip;
+            overflow-y: visible;
+            width: 100%;
+            max-width: 100%;
+            padding-bottom: 70px;
+        }
+        @media (min-width: 768px) { body { padding-bottom: 0; } }
+        #whatsapp-barra { padding-bottom: env(safe-area-inset-bottom, 0); }
+
+        .sr-only {
+            position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+            overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+        }
+        section[id], header[id], footer[id] { scroll-margin-top: 1rem; }
+
+        /* Hero — padrão geométrico + overlay */
+        .hero-bg {
+            position: relative;
+            isolation: isolate;
+            min-height: 90vh;
+            min-height: 90dvh;
+            background-color: #F5F5F5;
+            background-image:
+                linear-gradient(135deg, rgba(255,235,0,0.08) 25%, transparent 25%),
+                linear-gradient(225deg, rgba(255,235,0,0.08) 25%, transparent 25%),
+                linear-gradient(45deg, rgba(255,235,0,0.05) 25%, transparent 25%),
+                linear-gradient(315deg, rgba(255,235,0,0.05) 25%, #F5F5F5 25%);
+            background-size: 80px 80px;
+            background-position: 0 0, 0 0, 40px 40px, 40px 40px;
+        }
+        .hero-bg::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            background: linear-gradient(
+                100deg,
+                rgba(245, 245, 245, 0.97) 0%,
+                rgba(245, 245, 245, 0.88) 35%,
+                rgba(245, 245, 245, 0.55) 55%,
+                rgba(245, 245, 245, 0.2) 70%,
+                transparent 85%
+            );
+            pointer-events: none;
+        }
+        .hero-bg__photo {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            background-image: url("assets/img/AR2A0823-xl.webp");
+            background-size: cover;
+            background-position: center;
+            opacity: 0.35;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: left;
+        }
+        .hero-content .site-logo__img {
+            margin-left: 0;
+            margin-right: auto;
+            filter: none;
+        }
+        .hero-content .hero-title {
+            color: #000;
+            text-transform: uppercase;
+            font-weight: 900;
+            text-wrap: balance;
+        }
+        .hero-content .hero-text { color: #374151; }
+
+        #inicio { position: relative; z-index: 1; overflow: visible; }
+        #autoridade {
+            position: relative;
+            z-index: 10;
+            padding-top: 0;
+            padding-bottom: 4rem;
+            overflow: visible;
+            background: linear-gradient(to bottom, transparent 0, transparent 4.5rem, #F5F5F5 4.5rem, #F5F5F5 100%);
+        }
+        @media (min-width: 640px) {
+            #autoridade {
+                background: linear-gradient(to bottom, transparent 0, transparent 5.5rem, #F5F5F5 5.5rem, #F5F5F5 100%);
+            }
+        }
+        .autoridade-cards-wrap {
+            position: relative;
+            z-index: 20;
+            margin-top: -6.5rem;
+            padding-bottom: 0.5rem;
+        }
+        @media (min-width: 640px) { .autoridade-cards-wrap { margin-top: -7.5rem; } }
+        @media (min-width: 1024px) { .autoridade-cards-wrap { margin-top: -8.5rem; } }
+        .autoridade-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            align-items: stretch;
+        }
+        @media (min-width: 640px) {
+            .autoridade-cards { grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        }
+        @keyframes autoridadeCardIn {
+            from { opacity: 0; transform: translateY(10px) scale(0.97); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .autoridade-card {
+            position: relative;
+            z-index: 2;
+            opacity: 0;
+            height: 100%;
+            animation: autoridadeCardIn var(--motion-duration) var(--motion-ease) both;
+            transition: transform var(--motion-duration) var(--motion-ease), box-shadow var(--motion-duration) var(--motion-ease);
+        }
+        .autoridade-cards .autoridade-card:nth-child(1) { animation-delay: calc(var(--hero-end) + 0.1s); }
+        .autoridade-cards .autoridade-card:nth-child(2) { animation-delay: calc(var(--hero-end) + 0.2s); }
+        .autoridade-cards .autoridade-card:nth-child(3) { animation-delay: calc(var(--hero-end) + 0.3s); }
+        .autoridade-card:hover { transform: translateY(-0.5rem); }
+
+        .produtos-galeria {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            width: calc(100% + 2rem);
+            max-width: calc(100% + 2rem);
+            margin-left: -1rem;
+            margin-right: -1rem;
+        }
+        @media (min-width: 640px) {
+            .produtos-galeria {
+                width: calc(100% + 3rem);
+                max-width: calc(100% + 3rem);
+                margin-left: -1.5rem;
+                margin-right: -1.5rem;
+            }
+        }
+        @media (min-width: 768px) { .produtos-galeria { grid-template-columns: repeat(3, 1fr); } }
+        .produto-card {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 2 / 3;
+            cursor: pointer;
+            background: #000;
+        }
+        .produto-card img {
+            width: 100%; height: 100%; object-fit: cover; display: block;
+            transition: transform var(--motion-duration) var(--motion-ease);
+        }
+        .produto-card:hover img { transform: scale(1.07); }
+        .produto-card__overlay {
+            position: absolute; left: 0; right: 0; bottom: 0;
+            padding: 2.5rem 1.5rem 1.75rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.45) 55%, transparent 100%);
+            color: #fff;
+        }
+        .produto-card__titulo {
+            font-size: 1.125rem; font-weight: 700; letter-spacing: 0.02em;
+            margin-bottom: 0.5rem; line-height: 1.25;
+        }
+        @media (min-width: 768px) { .produto-card__titulo { font-size: 1.375rem; } }
+        .produto-card__desc {
+            font-size: 0.875rem; color: rgba(255,255,255,0.88); font-weight: 300;
+            line-height: 1.55;
+        }
+
+        .site-logo { display: inline-block; line-height: 0; }
+        .site-logo__img {
+            display: block; margin: 0 auto; width: auto; height: auto;
+            max-width: min(320px, 88vw); max-height: 5rem; object-fit: contain;
+        }
+        @media (min-width: 640px) { .site-logo__img { max-width: 380px; max-height: 6rem; } }
+        @media (min-width: 768px) { .site-logo__img { max-width: 440px; max-height: 7rem; } }
+
+        .carousel { position: relative; }
+        .carousel__viewport {
+            position: relative; width: 100%; aspect-ratio: 16 / 10;
+            max-height: min(72vh, 580px); overflow: hidden; border-radius: 0.5rem;
+            background: #000; box-shadow: 0 20px 40px -12px rgba(0,0,0,0.25);
+        }
+        .carousel__slide {
+            position: absolute; inset: 0; opacity: 0;
+            transition: opacity var(--motion-duration) var(--motion-ease);
+            pointer-events: none;
+        }
+        .carousel__slide.is-active { opacity: 1; pointer-events: auto; z-index: 1; }
+        .carousel__slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .carousel__btn {
+            position: absolute; top: 50%; z-index: 10; transform: translateY(-50%);
+            width: 2.75rem; height: 2.75rem; display: flex; align-items: center; justify-content: center;
+            border-radius: 9999px; background: rgba(255,235,0,0.95); color: #000; border: none;
+            cursor: pointer; box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+            transition: background var(--motion-duration) var(--motion-ease), transform var(--motion-duration) var(--motion-ease);
+        }
+        .carousel__btn:hover { background: #FFEB00; transform: translateY(-50%) scale(1.05); }
+        .carousel__btn--prev { left: 0.75rem; }
+        .carousel__btn--next { right: 0.75rem; }
+        .carousel__footer {
+            display: flex; align-items: center; justify-content: center;
+            gap: 1rem; margin-top: 1rem; flex-wrap: wrap;
+        }
+        .carousel__counter {
+            font-size: 0.8125rem; font-weight: 600; color: #000; min-width: 4.5rem; text-align: center;
+        }
+        .carousel__progress {
+            position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+            background: rgba(0,0,0,0.2); z-index: 5;
+        }
+        .carousel__progress-bar {
+            height: 100%; width: 0; background: #FFEB00;
+            animation: carousel-progress var(--carousel-interval, 5s) linear infinite;
+        }
+        @keyframes carousel-progress { from { width: 0; } to { width: 100%; } }
+        .carousel.is-paused .carousel__progress-bar { animation-play-state: paused; }
+
+        #galeria {
+            position: relative;
+            background-image: url('assets/img/AR2A0823-xl.webp');
+            background-size: cover; background-position: center;
+        }
+        #galeria::before {
+            content: ''; position: absolute; inset: 0; z-index: 0;
+            background: rgba(0,0,0,0.65); pointer-events: none;
+        }
+        #galeria > div { position: relative; z-index: 1; }
+        #galeria #galeria-titulo, #galeria p { color: #fff !important; }
+
+        .btn-shine { position: relative; overflow: hidden; }
+        .btn-shine::after {
+            content: ''; position: absolute; inset: 0; left: -110%; width: 55%;
+            background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.34) 50%, transparent 100%);
+            transform: skewX(-18deg); pointer-events: none;
+            animation: btn-shine-sweep 3.5s ease-in-out infinite;
+        }
+        @media (hover: hover) {
+            .btn-shine:hover::after, .btn-shine:focus-visible::after {
+                animation: btn-shine-sweep var(--motion-duration) var(--motion-ease) forwards;
+            }
+        }
+        @keyframes btn-shine-sweep {
+            0%, 8% { left: -110%; }
+            32%, 100% { left: 165%; }
+        }
+
+        @keyframes heroFadeDown {
+            from { opacity: 0; transform: translateY(-22px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes heroFadeUp {
+            from { opacity: 0; transform: translateY(18px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hero-content .site-logo  { animation: heroFadeDown var(--motion-duration) var(--motion-ease) 0.08s both; }
+        .hero-content .hero-title { animation: heroFadeUp var(--motion-duration) var(--motion-ease) 0.45s both; }
+        .hero-content .hero-text  { animation: heroFadeUp var(--motion-duration) var(--motion-ease) 0.82s both; }
+        .btn-pulse { animation: btn-breathe 2.8s ease-in-out infinite; }
+        .hero-content .btn-pulse {
+            animation: heroFadeUp var(--motion-duration) var(--motion-ease) 1.15s both, btn-breathe 2.8s ease-in-out 1.85s infinite;
+        }
+        .hero-content .hero-btn-eventos {
+            animation: heroFadeUp var(--motion-duration) var(--motion-ease) 1.35s both;
+        }
+        @keyframes btn-breathe {
+            0%, 100% { box-shadow: 0 4px 14px rgba(0,0,0,0.15); }
+            50% { box-shadow: 0 10px 32px rgba(255,235,0,0.35); }
+        }
+
+        .pacote-card {
+            border-left: 4px solid #FFEB00;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .hero-content .site-logo, .hero-content .hero-title, .hero-content .hero-text,
+            .hero-content .btn-pulse, .hero-content .hero-btn-eventos { animation: none; opacity: 1; }
+            .btn-pulse { animation: none; }
+            .autoridade-card { animation: none; opacity: 1; transform: none; }
+            .carousel__progress-bar { animation: none; width: 100%; opacity: 0.5; }
+        }
+
+        @media (max-width: 639px) {
+            #mapa { height: 240px !important; }
+            .produto-card__overlay { padding: 1.5rem 1rem 1.25rem; }
+            .produto-card__titulo { font-size: 0.95rem; }
+        }
+    </style>
+    <noscript><style>[data-aos] { opacity: 1 !important; transform: none !important; }</style></noscript>
+</head>
+<body class="bg-brand-light text-brand-dark font-sans antialiased min-w-0">
+
+    <main id="conteudo-principal">
+
+    <!-- Hero -->
+    <header id="inicio" class="hero-bg pt-16 sm:pt-20 pb-20 sm:pb-24 lg:pt-28 lg:pb-28 flex items-center">
+        <div class="hero-bg__photo" aria-hidden="true"></div>
+        <div class="hero-content max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-10">
+            <a href="#inicio" class="site-logo mb-6 sm:mb-8" aria-label="Espaço Pirâmide Eventos, voltar ao início">
+                <img
+                    src="assets/img/logo-lg.webp"
+                    alt="Espaço Pirâmide Eventos"
+                    class="site-logo__img"
+                    width="440"
+                    height="140"
+                    fetchpriority="high"
+                >
+            </a>
+
+            <h1 class="hero-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-snug mb-4 sm:mb-6 max-w-3xl lg:max-w-4xl">
+                Seu Evento no Coração de Curitiba, com Estrutura Completa.
+            </h1>
+
+            <p class="hero-text text-base sm:text-lg md:text-xl max-w-xl mb-8 sm:mb-10 font-light leading-relaxed">
+                Salão para até 150 convidados no Pilarzinho. Casamentos, 15 anos, corporativo e aniversários com buffet, DJ e assessoria — tudo em um só lugar, perto de você.
+            </p>
+
+            <div class="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
+                <a href="https://api.whatsapp.com/send/?phone=5541988909600&text=Ol%C3%A1%21+Gostaria+de+solicitar+um+or%C3%A7amento+no+Espa%C3%A7o+Pir%C3%A2mide+Eventos.&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="btn-shine btn-pulse inline-flex w-full sm:w-auto items-center justify-center gap-2 px-6 sm:px-10 py-3.5 sm:py-4 text-xs sm:text-sm uppercase tracking-widest font-bold text-brand-black transition-all duration-motion bg-brand-yellow rounded-md hover:bg-brand-yellowDark shadow-lg hover:-translate-y-1">
+                    <i class="fab fa-whatsapp text-lg" aria-hidden="true"></i>
+                    Solicitar Orçamento no WhatsApp
+                </a>
+                <a href="#eventos" class="hero-btn-eventos inline-flex w-full sm:w-auto items-center justify-center px-6 sm:px-10 py-3.5 sm:py-4 text-xs sm:text-sm uppercase tracking-widest font-bold text-brand-black transition-all duration-motion bg-white/90 border-2 border-brand-black rounded-md hover:bg-brand-black hover:text-brand-yellow shadow-md hover:-translate-y-1">
+                    Tipos de Evento
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Autoridade -->
+    <section id="autoridade" class="sm:pb-24 relative" aria-labelledby="autoridade-titulo">
+        <div class="autoridade-cards-wrap max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-10">
+            <h2 id="autoridade-titulo" class="sr-only">Nossos diferenciais</h2>
+            <div class="autoridade-cards">
+
+                <div id="autoridade-experiencia" class="autoridade-card group bg-white rounded-2xl p-10 sm:p-12 text-center shadow-[0_12px_48px_-12px_rgba(0,0,0,0.12)] border border-gray-100 hover:shadow-[0_24px_56px_-12px_rgba(0,0,0,0.18)] hover:-translate-y-2 transition-all duration-motion">
+                    <div class="relative w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-8 sm:mb-10">
+                        <div class="absolute inset-0 bg-brand-yellow/20 rounded-full scale-[1.15] group-hover:scale-[1.35] transition-transform duration-motion"></div>
+                        <div class="relative w-full h-full bg-brand-black rounded-full flex items-center justify-center text-brand-yellow shadow-md">
+                            <i class="fas fa-calendar-check text-3xl sm:text-4xl" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-3xl sm:text-4xl text-brand-black font-black mb-2">7 Anos</h3>
+                    <p class="text-sm font-semibold text-gray-500 uppercase tracking-widest">de História</p>
+                    <div class="w-12 h-px bg-brand-yellow/60 mx-auto mt-5 mb-4 transition-all duration-motion group-hover:w-20"></div>
+                    <p class="text-sm sm:text-base text-gray-500 font-light leading-relaxed">Nasceu para um 15 anos e hoje é referência em celebrações na região central.</p>
+                </div>
+
+                <div id="autoridade-google" class="autoridade-card group bg-white rounded-2xl p-10 sm:p-12 text-center shadow-[0_12px_48px_-12px_rgba(0,0,0,0.12)] border border-gray-100 hover:shadow-[0_24px_56px_-12px_rgba(0,0,0,0.18)] hover:-translate-y-2 transition-all duration-motion">
+                    <div class="relative w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-8 sm:mb-10">
+                        <div class="absolute inset-0 bg-brand-yellow/20 rounded-full scale-[1.15] group-hover:scale-[1.35] transition-transform duration-motion"></div>
+                        <div class="relative w-full h-full bg-brand-black rounded-full flex items-center justify-center text-brand-yellow shadow-md">
+                            <i class="fas fa-star text-3xl sm:text-4xl" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-3xl sm:text-4xl text-brand-black font-black mb-2">5 Estrelas</h3>
+                    <p class="text-sm font-semibold text-gray-500 uppercase tracking-widest">no Google</p>
+                    <div class="w-12 h-px bg-brand-yellow/60 mx-auto mt-5 mb-4 transition-all duration-motion group-hover:w-20"></div>
+                    <p class="text-sm sm:text-base text-gray-500 font-light leading-relaxed">Centenas de avaliações reais de quem já celebrou conosco.</p>
+                </div>
+
+                <div id="autoridade-localizacao" class="autoridade-card group bg-white rounded-2xl p-10 sm:p-12 text-center shadow-[0_12px_48px_-12px_rgba(0,0,0,0.12)] border border-gray-100 hover:shadow-[0_24px_56px_-12px_rgba(0,0,0,0.18)] hover:-translate-y-2 transition-all duration-motion">
+                    <div class="relative w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-8 sm:mb-10">
+                        <div class="absolute inset-0 bg-brand-yellow/20 rounded-full scale-[1.15] group-hover:scale-[1.35] transition-transform duration-motion"></div>
+                        <div class="relative w-full h-full bg-brand-black rounded-full flex items-center justify-center text-brand-yellow shadow-md">
+                            <i class="fas fa-location-dot text-3xl sm:text-4xl" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-3xl sm:text-4xl text-brand-black font-black mb-2">Região Central</h3>
+                    <p class="text-sm font-semibold text-gray-500 uppercase tracking-widest">Pilarzinho</p>
+                    <div class="w-12 h-px bg-brand-yellow/60 mx-auto mt-5 mb-4 transition-all duration-motion group-hover:w-20"></div>
+                    <p class="text-sm sm:text-base text-gray-500 font-light leading-relaxed">Perto de casa para montagem, festa e pós-festa — sem precisar sair da cidade.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- História -->
+    <section id="historia" class="py-12 sm:py-16 bg-white" aria-labelledby="historia-titulo">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center" data-aos="fade-up">
+                <div>
+                    <p class="text-xs font-semibold uppercase tracking-[0.22em] text-brand-gray mb-3">Institucional</p>
+                    <h2 id="historia-titulo" class="text-3xl sm:text-4xl font-black text-brand-black mb-4 uppercase">Uma História de Família</h2>
+                    <div class="w-14 h-px bg-brand-yellow mb-6" aria-hidden="true"></div>
+                    <p class="text-gray-600 text-sm sm:text-base leading-relaxed mb-4">
+                        O Espaço Pirâmide nasceu quando a família construiu o salão para celebrar um 15 anos. Depois veio a locação, e hoje, há sete anos, Vinicius e a equipe cuidam de cada detalhe do evento.
+                    </p>
+                    <p class="text-gray-600 text-sm sm:text-base leading-relaxed mb-4">
+                        Já recebemos casamentos, festas de 1 ano, 80 anos, formaturas, chás de bebê, confraternizações e reuniões corporativas — sempre com a mesma dedicação de quem trata cada festa como única.
+                    </p>
+                    <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
+                        Nosso salão fica em um endereço privilegiado da região central: prático para quem mora no Pilarzinho, Bom Retiro e São Lourenço, sem abrir mão de um ambiente completo e acolhedor.
+                    </p>
+                </div>
+                <div class="bg-brand-light rounded-2xl p-8 sm:p-10 border border-gray-100">
+                    <h3 class="text-lg font-bold text-brand-black mb-6 uppercase tracking-wide">O que oferecemos</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <span class="flex-shrink-0 w-8 h-8 bg-brand-yellow rounded-full flex items-center justify-center text-brand-black"><i class="fas fa-utensils text-sm" aria-hidden="true"></i></span>
+                            <span class="text-sm sm:text-base text-gray-600"><strong class="text-brand-black">Buffet completo</strong> — gastronomia integrada ao espaço, sem marcas separadas na experiência do evento.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="flex-shrink-0 w-8 h-8 bg-brand-yellow rounded-full flex items-center justify-center text-brand-black"><i class="fas fa-music text-sm" aria-hidden="true"></i></span>
+                            <span class="text-sm sm:text-base text-gray-600"><strong class="text-brand-black">DJ, cerimonial e fotografia</strong> — parceiros de confiança, com opção de pacotes fechados.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="flex-shrink-0 w-8 h-8 bg-brand-yellow rounded-full flex items-center justify-center text-brand-black"><i class="fas fa-handshake text-sm" aria-hidden="true"></i></span>
+                            <span class="text-sm sm:text-base text-gray-600"><strong class="text-brand-black">Assessoria na organização</strong> — indicamos profissionais e ajudamos a montar a festa ideal.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="flex-shrink-0 w-8 h-8 bg-brand-yellow rounded-full flex items-center justify-center text-brand-black"><i class="fas fa-users text-sm" aria-hidden="true"></i></span>
+                            <span class="text-sm sm:text-base text-gray-600"><strong class="text-brand-black">Até 150 convidados</strong> — capacidade ideal para celebrações íntimas e memoráveis.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria -->
+    <section id="galeria" class="py-12 sm:py-16" aria-labelledby="galeria-titulo">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-8 sm:mb-12">
+                <p class="text-xs font-semibold uppercase tracking-[0.22em] text-brand-yellow mb-3">Portfólio</p>
+                <h2 id="galeria-titulo" class="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4 uppercase">Galeria de Eventos</h2>
+                <div class="w-14 h-px bg-brand-yellow mx-auto mb-4" aria-hidden="true"></div>
+                <p class="text-white/70 font-light text-sm sm:text-base max-w-2xl mx-auto">Momentos reais de quem celebrou conosco — casamentos, corporativos, debutantes e muito mais.</p>
+            </div>
+
+            <div id="galeria-carrossel" class="carousel" role="region" aria-roledescription="carrossel" aria-label="Galeria de fotos dos eventos" data-autoplay="true" data-interval="5000">
+                <div class="carousel__viewport" data-aos="fade-up">
+                    <div id="carousel-track" class="carousel__track"></div>
+                    <div class="carousel__progress" aria-hidden="true">
+                        <div class="carousel__progress-bar" id="carousel-progress-bar"></div>
+                    </div>
+                    <button type="button" class="carousel__btn carousel__btn--prev" id="carousel-prev" aria-label="Foto anterior">
+                        <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                    </button>
+                    <button type="button" class="carousel__btn carousel__btn--next" id="carousel-next" aria-label="Próxima foto">
+                        <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div class="carousel__footer">
+                    <span class="carousel__counter text-white/80" id="carousel-counter" aria-live="polite">1 / 8</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tipos de Evento -->
+    <section id="eventos" class="py-12 sm:py-16 bg-white" aria-labelledby="eventos-titulo">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-10 sm:mb-16" data-aos="fade-up">
+                <p class="text-xs font-semibold uppercase tracking-[0.22em] text-brand-gray mb-3">Celebrações</p>
+                <h2 id="eventos-titulo" class="text-3xl sm:text-4xl md:text-5xl font-black text-brand-black mb-4 uppercase">Tipos de Evento</h2>
+                <div class="w-14 h-px bg-brand-yellow mx-auto mb-4" aria-hidden="true"></div>
+                <p class="text-gray-500 font-light text-sm sm:text-base max-w-2xl mx-auto">Do corporativo ao casamento: estrutura completa para cada ocasião especial.</p>
+            </div>
+
+            <article id="casamentos" class="mb-16 sm:mb-24">
+                <div class="mb-8 sm:mb-10" data-aos="fade-up">
+                    <p class="text-xs font-semibold uppercase tracking-[0.22em] text-brand-gray mb-3">União &amp; Festa</p>
+                    <div class="flex flex-col sm:flex-row sm:items-end gap-4 sm:gap-10">
+                        <div class="flex-1">
+                            <h3 class="text-2xl sm:text-3xl md:text-4xl font-black text-brand-black mb-3 uppercase">Casamentos &amp; Recepções</h3>
+                            <div class="w-10 h-px bg-brand-yellow mb-4" aria-hidden="true"></div>
+                            <p class="text-gray-600 text-sm sm:text-base leading-relaxed max-w-xl">Cerimônia na igreja e festa conosco — o formato mais procurado. Ambiente elegante para receber família e amigos após o "sim".</p>
+                        </div>
+                        <div class="shrink-0">
+                            <a href="https://api.whatsapp.com/send/?phone=5541988909600&text=Ol%C3%A1%21+Tenho+interesse+em+agendar+uma+festa+de+casamento+no+Espa%C3%A7o+Pir%C3%A2mide.&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="btn-shine inline-flex w-full sm:w-auto items-center justify-center gap-2 bg-brand-black text-brand-yellow px-8 py-3 rounded-md text-sm font-semibold hover:bg-gray-900 transition uppercase tracking-wider"><i class="fab fa-whatsapp" aria-hidden="true"></i> Orçar casamento</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="produtos-galeria" aria-label="Galeria casamentos">
+                    <figure class="produto-card">
+                        <img src="assets/img/IMG_1747-md.webp" srcset="assets/img/IMG_1747-md.webp 800w, assets/img/IMG_1747-lg.webp 985w" sizes="(min-width: 768px) 33vw, 100vw" alt="Recepção de casamento com lustre de cristal" loading="lazy" decoding="async">
+                        <div class="produto-card__overlay">
+                            <p class="produto-card__titulo">Recepção Completa</p>
+                            <p class="produto-card__desc">Buffet, decoração e estrutura para a festa após a cerimônia.</p>
+                        </div>
+                    </figure>
+                    <figure class="produto-card">
+                        <img src="assets/img/BL7A8787-md.webp" srcset="assets/img/BL7A8787-md.webp 800w, assets/img/BL7A8787-lg.webp 1200w" sizes="(min-width: 768px) 33vw, 100vw" alt="Lounge decorado para recepção dos convidados" loading="lazy" decoding="async">
+                        <div class="produto-card__overlay">
+                            <p class="produto-card__titulo">Ambiente Acolhedor</p>
+                            <p class="produto-card__desc">Salão preparado para momentos íntimos com quem você ama.</p>
+                        </div>
+                    </figure>
+                    <figure class="produto-card">
+                        <img src="assets/img/AR2A0821-md.webp" srcset="assets/img/AR2A0821-md.webp 800w, assets/img/AR2A0821-lg.webp 1200w" sizes="(min-width: 768px) 33vw, 100vw" alt="Buffet de doces em recepção de casamento" loading="lazy" decoding="async">
+                        <div class="produto-card__overlay">
+                            <p class="produto-card__titulo">Pacote Completo</p>
+                            <p class="produto-card__desc">DJ, buffet e staff — tudo sob medida para o seu grande dia.</p>
+                        </div>
+                    </figure>
+                </div>
+            </article>
+
+            <article id="debutantes" class="mb-16 sm:mb-24">
+                <div class="mb-8 sm:mb-10" data-aos="fade-up">
+                    <p class="text-xs font-semibold uppercase tracking-[0.22em] text-brand-gray mb-3">15 &amp; 18 Anos</p>
+                    <div class="flex flex-col sm:flex-row sm:items-end gap-4 sm:gap-10">
+                        <div class="flex-1">
+                            <h3 class="text-2xl sm:text-3xl md:text-4xl font-black text-brand-black mb-3 uppercase">Debutantes &amp; Formaturas</h3>
+                            <div class="w-10 h-px bg-brand-yellow mb-4" aria-hidden="true"></div>
+                            <p class="text-gray-600 text-sm sm:text-base leading-relaxed max-w-xl">15 anos, 18 anos e formaturas — as datas que marcam a vida. Estrutura completa para uma celebração inesquecível.</p>
+                        </div>
+                        <div class="shrink-0">
+                            <a href="https://api.whatsapp.com/send/?phone=5541988909600&text=Ol%C3%A1%21+Quero+or%C3%A7amento+para+15+anos+ou+formatura+no+Espa%C3%A7o+Pir%C3%A2mide.&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="btn-shine inline-flex w-full sm:w-auto items-center justify-center gap-2 bg-brand-black text-brand-yellow px-8 py-3 rounded-md text-sm font-semibold hover:bg-gray-900 transition uppercase tracking-wider"><i class="fab fa-whatsapp" aria-hidden="true"></i> Orçar debutante</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="produtos-galeria" aria-label="Galeria debutantes">
+                    <figure class="produto-card">
+                        <img src="assets/img/AR2A0826-md.webp" srcset="assets/img/AR2A0826-md.webp 800w, assets/img/AR2A0826-lg.webp 1200w" sizes="(min-width: 768px) 33vw, 100vw" alt="Mesa de doces decorada para festa de 15 anos" loading="lazy" decoding="async">
+                        <div class="produto-card__overlay">
+                            <p class="produto-card__titulo">15 Anos</p>
+                            <p class="produto-card__desc">A data mais especial — onde tudo começou para o Espaço Pirâmide.</p>
+                        </div>
+                    </figure>
+                    <figure class="produto-card">
+                        <img src="assets/img/AR2A0830-md.webp" srcset="assets/img/AR2A0830-md.webp 800w, assets/img/AR2A0830-lg.webp 1200w" sizes="(min-width: 768px) 33vw, 100vw" alt="Salão montado para festa de formatura" loading="lazy" decoding="async">
+                        <div class="produto-card__overlay">
+                            <p class="produto-card__titulo">Formatura</p>
+                            <p class="produto-card__desc">Espaço versátil para ensaios fotográficos e festas de conclusão.</p>
+                        </div>
+                    </figure>
+                    <figure class="produto-card">
+                        <img src="assets/img/BL7A8782-md.webp" srcset="assets/img/BL7A8782-md.webp 800w, assets/img/BL7A8782-lg.webp 1200w" sizes="(min-width: 768px) 33vw, 100vw" alt="Palco com iluminação, som e pista de dança LED" loading="lazy" decoding="async">
+                        <div class="produto-card__overlay">
+                            <p class="produto-card__titulo">DJ da Casa</p>
+                            <p class="produto-card__desc">Parceiros fixos para animar a pista a noite toda.</p>
+                        </div>
+                    </figure>
+                </div>
+            </article>
+
+            <article id="corporativo">
+                <div class="mb-8 sm:mb-10" data-aos="fade-up">
+                    <p class="text-xs font-semibold uppercase tracking-[0.22em] text-brand-gray mb-3">Empresas &amp; Equipes</p>
+                    <div class="flex flex-col sm:flex-row sm:items-end gap-4 sm:gap-10">
+                        <div class="flex-1">
+                            <h3 class="text-2xl sm:text-3xl md:text-4xl font-black text-brand-black mb-3 uppercase">Corporativo &amp; Confraternizações</h3>
+                            <div class="w-10 h-px bg-brand-yellow mb-4" aria-hidden="true"></div>
+                            <p class="text-gray-600 text-sm sm:text-base leading-relaxed max-w-xl">Confraternizações de fim e início de ano, reuniões, networking e eventos empresariais — práticos de organizar e fáceis de acessar.</p>
+                        </div>
+                        <div class="shrink-0">
+                            <a href="https://api.whatsapp.com/send/?phone=5541988909600&text=Ol%C3%A1%21+Preciso+de+or%C3%A7amento+para+evento+corporativo+no+Espa%C3%A7o+Pir%C3%A2mide.&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="btn-shine inline-flex w-full sm:w-auto items-center justify-center gap-2 bg-brand-black text-brand-yellow px-8 py-3 rounded-md text-sm font-semibold hover:bg-gray-900 transition uppercase tracking-wider"><i class="fab fa-whatsapp" aria-hidden="true"></i> Orçar corporativo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="produtos-galeria" aria-label="Galeria corporativo">
+                    <figure class="produto-card">
+                        <img src="assets/img/BL7A8783-md.webp" srcset="assets/img/BL7A8783-md.webp 800w, assets/img/BL7A8783-lg.webp 1200w" sizes="(min-width: 768px) 33vw, 100vw" alt="Banquete corporativo com mesas postas" loading="lazy" decoding="async">
+                        <div class="produto-card__overlay">
+                            <p class="produto-card__titulo">Confraternização</p>
+                            <p class="produto-card__desc">Dezembro e janeiro — épocas ideais para reunir a equipe.</p>
+                        </div>
+                    </figure>
+                    <figure class="produto-card">
+                        <img src="assets/img/BL7A8789-md.webp" srcset="assets/img/BL7A8789-md.webp 800w, assets/img/BL7A8789-lg.webp 1200w" sizes="(min-width: 768px) 33vw, 100vw" alt="Lounge para encontros e networking" loading="lazy" decoding="async">
+                        <div class="produto-card__overlay">
+                            <p class="produto-card__titulo">Reuniões &amp; Encontros</p>
+                            <p class="produto-card__desc">Estrutura para encontros profissionais e networking.</p>
+                        </div>
+                    </figure>
+                    <figure class="produto-card">
+                        <img src="assets/img/AR2A0823-md.webp" srcset="assets/img/AR2A0823-md.webp 800w, assets/img/AR2A0823-lg.webp 1200w" sizes="(min-width: 768px) 33vw, 100vw" alt="Salão amplo para eventos empresariais recorrentes" loading="lazy" decoding="async">
+                        <div class="produto-card__overlay">
+                            <p class="produto-card__titulo">Parcerias Recorrentes</p>
+                            <p class="produto-card__desc">Empresas que voltam mês a mês — confiança construída no dia a dia.</p>
+                        </div>
+                    </figure>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Pacotes -->
+    <section id="pacotes" class="py-12 sm:py-16 bg-brand-light" aria-labelledby="pacotes-titulo">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-10 sm:mb-14" data-aos="fade-up">
+                <p class="text-xs font-semibold uppercase tracking-[0.22em] text-brand-gray mb-3">Serviços</p>
+                <h2 id="pacotes-titulo" class="text-3xl sm:text-4xl md:text-5xl font-black text-brand-black mb-4 uppercase">Como Podemos Atender</h2>
+                <div class="w-14 h-px bg-brand-yellow mx-auto mb-4" aria-hidden="true"></div>
+                <p class="text-gray-500 font-light text-sm sm:text-base max-w-2xl mx-auto">Do pacote completo ao salão — flexibilidade para cada orçamento e ocasião.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+                <div class="pacote-card bg-white rounded-2xl p-8 shadow-lg border border-gray-100" data-aos="fade-up">
+                    <span class="inline-block bg-brand-yellow text-brand-black text-xs font-bold uppercase tracking-widest px-3 py-1 rounded mb-4">Maior retorno</span>
+                    <h3 class="text-xl font-black text-brand-black mb-3 uppercase">Pacote Completo</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-6">Buffet, DJ, staff e estrutura integrados. A experiência premium — ideal para quem quer resolver tudo em um só lugar.</p>
+                    <a href="https://api.whatsapp.com/send/?phone=5541988909600&text=Ol%C3%A1%21+Quero+saber+sobre+o+pacote+completo+no+Espa%C3%A7o+Pir%C3%A2mide.&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-bold text-brand-black hover:text-brand-gray transition uppercase tracking-wide"><i class="fab fa-whatsapp" aria-hidden="true"></i> Solicitar orçamento →</a>
+                </div>
+                <div class="pacote-card bg-white rounded-2xl p-8 shadow-lg border border-gray-100" data-aos="fade-up" data-aos-delay="100">
+                    <span class="inline-block bg-brand-black text-brand-yellow text-xs font-bold uppercase tracking-widest px-3 py-1 rounded mb-4">Mais procurado</span>
+                    <h3 class="text-xl font-black text-brand-black mb-3 uppercase">Salão + Buffet</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-6">Espaço e gastronomia sob a marca Espaço Pirâmide. Você traz DJ e demais fornecedores, ou fechamos parceiros para você.</p>
+                    <a href="https://api.whatsapp.com/send/?phone=5541988909600&text=Ol%C3%A1%21+Quero+or%C3%A7amento+de+sal%C3%A3o+com+buffet.&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-bold text-brand-black hover:text-brand-gray transition uppercase tracking-wide"><i class="fab fa-whatsapp" aria-hidden="true"></i> Solicitar orçamento →</a>
+                </div>
+                <div class="pacote-card bg-white rounded-2xl p-8 shadow-lg border border-gray-100" data-aos="fade-up" data-aos-delay="200">
+                    <span class="inline-block bg-gray-200 text-brand-black text-xs font-bold uppercase tracking-widest px-3 py-1 rounded mb-4">Flexível</span>
+                    <h3 class="text-xl font-black text-brand-black mb-3 uppercase">Somente Salão</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-6">Locação do espaço para movimentar o salão — inclusive em dias de semana com condições especiais. Ideal para ensaios e eventos menores.</p>
+                    <a href="https://api.whatsapp.com/send/?phone=5541988909600&text=Ol%C3%A1%21+Quero+or%C3%A7amento+s%C3%B3+do+sal%C3%A3o.&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-bold text-brand-black hover:text-brand-gray transition uppercase tracking-wide"><i class="fab fa-whatsapp" aria-hidden="true"></i> Solicitar orçamento →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section id="depoimentos" class="bg-brand-black py-12 sm:py-16 md:py-20" aria-labelledby="depoimentos-titulo">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-10 sm:mb-16 text-white" data-aos="fade-up">
+                <p class="text-xs font-semibold uppercase tracking-[0.22em] text-brand-yellow mb-3">Avaliações</p>
+                <h2 id="depoimentos-titulo" class="text-3xl sm:text-4xl md:text-5xl font-black mb-4 px-2 uppercase">O Que Dizem Sobre Nós</h2>
+                <div class="w-14 h-px bg-brand-yellow mx-auto mb-5" aria-hidden="true"></div>
+                <div class="flex flex-wrap justify-center items-center gap-x-2 gap-y-1 mb-2 px-2">
+                    <span class="font-bold text-base sm:text-lg">EXCELENTE</span>
+                    <span class="text-brand-yellow tracking-widest text-lg sm:text-xl" aria-hidden="true">★★★★★</span>
+                </div>
+                <p class="text-xs sm:text-sm text-gray-400">Com base nas avaliações do Google</p>
+            </div>
+
+            <div class="reviews-widget reviews-widget--dark" data-reviews-carousel role="region" aria-roledescription="carrossel" aria-label="Avaliações do Google">
+                <div class="reviews-widget__header">
+                    <div class="reviews-widget__google">
+                        <svg class="reviews-widget__google-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                        Avaliações no Google
+                    </div>
+                    <div class="reviews-widget__score">
+                        <span class="reviews-widget__stars" aria-hidden="true">★★★★★</span>
+                        <span>5,0 · 100+ avaliações</span>
+                    </div>
+                </div>
+                <div class="reviews-widget__viewport">
+                    <div class="reviews-widget__track"></div>
+                </div>
+                <div class="reviews-widget__footer">
+                    <button type="button" class="reviews-widget__btn reviews-widget__btn--prev bg-brand-yellow text-brand-black" aria-label="Avaliação anterior"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+                    <div class="reviews-widget__dots"></div>
+                    <button type="button" class="reviews-widget__btn reviews-widget__btn--next bg-brand-yellow text-brand-black" aria-label="Próxima avaliação"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+                </div>
+            </div>
+
+            <div class="text-center mt-10 sm:mt-12 px-2">
+                <a href="https://api.whatsapp.com/send/?phone=5541988909600&text=Ol%C3%A1%21+Vi+as+avalia%C3%A7%C3%B5es+do+Espa%C3%A7o+Pir%C3%A2mide+e+gostaria+de+um+or%C3%A7amento.&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="btn-shine inline-flex w-full sm:w-auto max-w-md sm:max-w-none items-center justify-center gap-2 bg-brand-yellow text-brand-black font-bold px-6 sm:px-8 py-3 rounded-md hover:bg-brand-yellowDark transition shadow-lg text-sm sm:text-base">
+                    <i class="fab fa-whatsapp text-lg" aria-hidden="true"></i>
+                    Quero Celebrar Aqui Também
+                </a>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer id="contato" class="bg-brand-black text-white border-t border-gray-800">
+
+        <div id="mapa" class="w-full" style="height:380px;">
+            <iframe
+                src="https://www.google.com/maps?q=Espa%C3%A7o+Pir%C3%A2mide+Eventos+Curitiba&output=embed&hl=pt-BR&z=13"
+                width="100%"
+                height="100%"
+                style="border:0; display:block;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Localização Espaço Pirâmide Eventos no Google Maps">
+            </iframe>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 pt-12 sm:pt-16 pb-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-12">
+
+            <div id="quem-somos" data-aos="fade-up">
+                <img src="assets/img/logo-sm.webp" alt="Espaço Pirâmide Eventos" class="h-10 sm:h-12 mb-5">
+                <p class="text-sm font-light leading-relaxed text-gray-400 mb-6 max-w-xs">
+                    Salão de eventos no coração de Curitiba. Há 7 anos transformando datas especiais em memórias inesquecíveis.
+                </p>
+                <div class="space-y-3 text-sm font-light text-gray-400">
+                    <p class="flex items-center gap-2">
+                        <i class="fas fa-clock fa-fw text-brand-yellow" aria-hidden="true"></i>
+                        Atendimento comercial via WhatsApp
+                    </p>
+                    <p class="flex items-center gap-2">
+                        <i class="fab fa-whatsapp fa-fw text-brand-yellow" aria-hidden="true"></i>
+                        <a href="https://api.whatsapp.com/send/?phone=5541988909600" class="hover:text-white transition-colors">(41) 98890-9600</a>
+                    </p>
+                    <p class="flex items-start gap-2">
+                        <i class="fas fa-location-dot fa-fw mt-0.5 shrink-0 text-brand-yellow" aria-hidden="true"></i>
+                        <span>Rua Orestes Beltrami, 330<br>Pilarzinho, Curitiba — PR, 82120-030<br><span class="text-brand-yellow">📍 Região central — fácil acesso</span></span>
+                    </p>
+                </div>
+            </div>
+
+            <nav aria-label="Navegação do rodapé" data-aos="fade-up" data-aos-delay="100">
+                <h4 class="text-xs font-semibold uppercase tracking-widest text-brand-yellow mb-5">Navegação</h4>
+                <ul class="space-y-3">
+                    <li><a href="#inicio" class="text-sm text-gray-400 hover:text-white transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-brand-yellow"></i>Início</a></li>
+                    <li><a href="#historia" class="text-sm text-gray-400 hover:text-white transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-brand-yellow"></i>Nossa História</a></li>
+                    <li><a href="#galeria" class="text-sm text-gray-400 hover:text-white transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-brand-yellow"></i>Galeria</a></li>
+                    <li><a href="#eventos" class="text-sm text-gray-400 hover:text-white transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-brand-yellow"></i>Tipos de Evento</a></li>
+                    <li><a href="#pacotes" class="text-sm text-gray-400 hover:text-white transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-brand-yellow"></i>Pacotes</a></li>
+                    <li><a href="#depoimentos" class="text-sm text-gray-400 hover:text-white transition-colors flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-brand-yellow"></i>Avaliações</a></li>
+                </ul>
+            </nav>
+
+            <div>
+                <h4 class="text-xs font-semibold uppercase tracking-widest text-brand-yellow mb-5">Fale Conosco</h4>
+                <p class="text-sm text-gray-400 font-light mb-5 leading-relaxed">Solicite um orçamento personalizado. Atendemos eventos para até 150 convidados na região central de Curitiba.</p>
+                <a href="https://api.whatsapp.com/send/?phone=5541988909600&text=Ol%C3%A1%21+Gostaria+de+um+or%C3%A7amento+no+Espa%C3%A7o+Pir%C3%A2mide+Eventos.&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="btn-shine inline-flex items-center gap-2 bg-[#25D366] text-white font-bold text-sm px-5 py-2.5 rounded-md hover:bg-[#1ebd5a] transition">
+                    <i class="fab fa-whatsapp text-lg" aria-hidden="true"></i>
+                    Chamar no WhatsApp
+                </a>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-5 pb-28 md:pb-5 border-t border-gray-800 text-center text-xs text-gray-500">
+            © 2026 Espaço Pirâmide Eventos · Todos os direitos reservados
+        </div>
+    </footer>
+
+    <!-- WhatsApp mobile -->
+    <div id="whatsapp-barra" class="md:hidden fixed bottom-0 left-0 w-full z-50 shadow-[0_-4px_10px_rgba(0,0,0,0.15)]">
+        <a href="https://api.whatsapp.com/send/?phone=5541988909600&text=Ol%C3%A1%21+Gostaria+de+um+or%C3%A7amento+no+Espa%C3%A7o+Pir%C3%A2mide+Eventos.&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="btn-shine flex items-center justify-center w-full min-h-[56px] bg-[#25D366] text-white py-3.5 font-bold text-sm hover:bg-[#1ebd5a] transition uppercase tracking-wide px-4">
+            <i class="fab fa-whatsapp text-2xl mr-2" aria-hidden="true"></i>
+            Falar no WhatsApp
+        </a>
+    </div>
+
+    <!-- WhatsApp desktop -->
+    <a id="whatsapp-flutuante" href="https://api.whatsapp.com/send/?phone=5541988909600&text=Ol%C3%A1%21+Gostaria+de+um+or%C3%A7amento+no+Espa%C3%A7o+Pir%C3%A2mide+Eventos.&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="hidden md:flex fixed bottom-6 lg:bottom-8 right-6 lg:right-8 bg-[#25D366] text-white w-14 h-14 lg:w-16 lg:h-16 rounded-full shadow-[0_4px_14px_rgba(37,211,102,0.4)] justify-center items-center hover:bg-[#1ebd5a] transition-transform transform hover:scale-110 z-50" aria-label="Falar no WhatsApp">
+        <i class="fab fa-whatsapp text-3xl" aria-hidden="true"></i>
+    </a>
+
+    <script>
+    (function () {
+        var ASSET_FILES = [
+            { src: 'assets/img/AR2A0823-lg.webp', alt: 'Salão completo com mesas e pista de LED' },
+            { src: 'assets/img/IMG_1747-lg.webp', alt: 'Recepção de casamento com lustre de cristal' },
+            { src: 'assets/img/IMG_9853-lg.webp', alt: 'Mesa posta para jantar de casamento' },
+            { src: 'assets/img/BL7A8780-lg.webp', alt: 'Festa de formatura com palco em LED' },
+            { src: 'assets/img/AR2A0826-lg.webp', alt: 'Mesa de doces decorada para celebração' },
+            { src: 'assets/img/IMG_9851-lg.webp', alt: 'Mesa de doces e bolo de aniversário' },
+            { src: 'assets/img/BL7A8783-lg.webp', alt: 'Banquete formal para evento corporativo' },
+            { src: 'assets/img/BL7A8787-lg.webp', alt: 'Área lounge para recepção dos convidados' }
+        ];
+
+        var root = document.getElementById('galeria-carrossel');
+        var track = document.getElementById('carousel-track');
+        var counterEl = document.getElementById('carousel-counter');
+        var progressBar = document.getElementById('carousel-progress-bar');
+        var btnPrev = document.getElementById('carousel-prev');
+        var btnNext = document.getElementById('carousel-next');
+
+        if (!root || !track || !ASSET_FILES.length) return;
+
+        var intervalMs = parseInt(root.getAttribute('data-interval'), 10) || 5000;
+        var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var autoplay = root.getAttribute('data-autoplay') === 'true' && !prefersReducedMotion;
+        var current = 0;
+        var slides = [];
+        var timer = null;
+
+        root.style.setProperty('--carousel-interval', intervalMs + 'ms');
+
+        function buildSlides() {
+            ASSET_FILES.forEach(function (item, i) {
+                var slide = document.createElement('div');
+                slide.className = 'carousel__slide' + (i === 0 ? ' is-active' : '');
+                slide.setAttribute('role', 'group');
+                slide.setAttribute('aria-roledescription', 'slide');
+                slide.setAttribute('aria-label', (i + 1) + ' de ' + ASSET_FILES.length);
+
+                var img = document.createElement('img');
+                img.src = item.src;
+                img.alt = item.alt;
+                img.loading = i === 0 ? 'eager' : 'lazy';
+                img.decoding = 'async';
+
+                slide.appendChild(img);
+                track.appendChild(slide);
+                slides.push(slide);
+            });
+        }
+
+        function updateCounter() {
+            counterEl.textContent = (current + 1) + ' / ' + ASSET_FILES.length;
+        }
+
+        function restartProgress() {
+            if (!progressBar) return;
+            progressBar.style.animation = 'none';
+            void progressBar.offsetWidth;
+            progressBar.style.animation = '';
+        }
+
+        function goTo(index) {
+            var total = slides.length;
+            current = ((index % total) + total) % total;
+            slides.forEach(function (slide, i) {
+                slide.classList.toggle('is-active', i === current);
+            });
+            updateCounter();
+            restartProgress();
+        }
+
+        function next() { goTo(current + 1); }
+        function prev() { goTo(current - 1); }
+
+        function startAutoplay() {
+            stopAutoplay();
+            if (!autoplay) return;
+            timer = setInterval(next, intervalMs);
+            root.classList.remove('is-paused');
+        }
+
+        function stopAutoplay() {
+            if (timer) { clearInterval(timer); timer = null; }
+            root.classList.add('is-paused');
+        }
+
+        buildSlides();
+        updateCounter();
+
+        btnNext.addEventListener('click', function () { next(); startAutoplay(); });
+        btnPrev.addEventListener('click', function () { prev(); startAutoplay(); });
+        root.addEventListener('mouseenter', stopAutoplay);
+        root.addEventListener('mouseleave', startAutoplay);
+        root.addEventListener('focusin', stopAutoplay);
+        root.addEventListener('focusout', function (e) {
+            if (!root.contains(e.relatedTarget)) startAutoplay();
+        });
+        document.addEventListener('visibilitychange', function () {
+            if (document.hidden) stopAutoplay();
+            else startAutoplay();
+        });
+        startAutoplay();
+    })();
+    </script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (reducedMotion) {
+            document.querySelectorAll('[data-aos]').forEach(function(el) {
+                el.removeAttribute('data-aos');
+            });
+            return;
+        }
+
+        var MOTION_DURATION = 550;
+        var MOTION_STAGGER = 100;
+
+        document.querySelectorAll('.produtos-galeria .produto-card').forEach(function(el, i) {
+            el.setAttribute('data-aos', 'fade-up');
+            el.setAttribute('data-aos-delay', String((i % 3) * MOTION_STAGGER));
+            el.setAttribute('data-aos-duration', String(MOTION_DURATION));
+        });
+
+        document.querySelectorAll('[data-aos]:not([data-aos-duration])').forEach(function(el) {
+            el.setAttribute('data-aos-duration', String(MOTION_DURATION));
+        });
+
+        AOS.init({
+            duration: MOTION_DURATION,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 60,
+            anchorPlacement: 'top-bottom'
+        });
+    });
+    </script>
+
+    <script src="assets/site-config.js"></script>
+    <script src="assets/reviews-carousel.js"></script>
+
+</body>
+</html>

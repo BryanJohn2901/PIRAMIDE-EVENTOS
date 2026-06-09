@@ -1,0 +1,7 @@
+dist/
+assets/FOTOS PRIME/
+*.heic
+*.HEIC
+*.MOV
+*.MP4
+wrangler.toml
